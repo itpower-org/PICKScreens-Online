@@ -1,0 +1,101 @@
+img.border {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.left {
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+input[type=checkbox] {
+	margin: 0 5px 2px 1px;
+}
+
+table#screens {
+	cursor: pointer;
+}
+
+button {
+	padding: 4px 5px;
+}
+
+input[name=search] {
+	width: 96%;
+}
+
+#intro {
+	border-bottom: 1px solid black;
+	padding: 60px 0 10px;
+}
+
+h2 {
+	font-size: 22px;
+	margin: 0 10px 0 0;
+}
+
+span.pointOut {
+	font-weight: bold;
+}
+
+#page_help .sidebar {
+	padding-top: 39px;
+	font-style: italic;
+}
+
+div.page {
+	clear: both;
+}
+
+div#intro {
+	border-bottom: 1px solid black;
+}
+
+#compareButtons {
+	border-top: 1px solid black;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+#itp-brand {
+	height: 40px;
+	margin: -3px 0 0;
+}
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('resources/style/spinner.gif') 
+                50% 50% 
+                no-repeat;
+    margin: 0;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}

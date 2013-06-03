@@ -1,8 +1,3 @@
-PICKScreens-Online
-==================
-
-
-
 Creative Commons License BY-NC-SA 3.0
 -------------------------------------
 

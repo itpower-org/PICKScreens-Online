@@ -1,0 +1,39 @@
+# ignore not-sources like compiled log and setting files #
+*.class
+*.settings
+*.project
+*.classpath
+*.log
+*/target
+target
+*.swp
+*.swo
+.DS_Store
+*.war
+*.ear
+*~
+.~lock
+nbactions.xml
+nb-configuration.xml
+profiles.xml
+.tomcatplugin
+C:*
+
+# ignore test reports
+*report.html
+
+# ignore pickscreens configuration
+pickscreens.conf*
+
+# make your own scripts named with prefix "my_":
+*/my_*.sh
+my_*.sh
+*/my_*.ps1
+my_*.ps1
+*/my_*.sql
+my_*.sql
+
+# make your own poms:
+*/my_pom*.xml
+my_pom*.xml
+

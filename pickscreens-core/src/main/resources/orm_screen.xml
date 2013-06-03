@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+  "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Screen">
+
+	<!-- ALL INSERT QUERIES -->
+	<insert id="Screen.insert" parameterClass="org.itpower.pickscreens.core.model.Screen">
+		INSERT INTO screen (id, name, freeForPublic, filename)
+		VALUES (null, #name#, #freeForPublic#, #filename#)
+		<selectKey resultClass="int" keyProperty="id">
+			SELECT @@IDENTITY AS ID
+		</selectKey>
+	</insert>
+	<insert id="Ingredient.insert" parameterClass="org.itpower.pickscreens.core.model.Ingredient">
+		INSERT INTO ingredient(id, name, idRecipe, unit, amount, type)
+		VALUES(NULL, #name#, #idRecipe#, #unit#, #amount#, #type#)
+		<selectKey resultClass="int" keyProperty="id">
+			SELECT @@IDENTITY AS ID
+		</selectKey>
+	</insert>
+	<insert id="Duplicate.insert" parameterClass="org.itpower.pickscreens.core.model.Duplicate">
+		INSERT INTO duplicate(id, idScreen1, idScreen2, idRecipe1, idRecipe2, comparatorString)
+		VALUES(NULL, #idScreen1#, #idScreen2#, #idRecipe1#, #idRecipe2#, #comparatorString#)
+		<selectKey resultClass="int" keyProperty="id">
+			SELECT @@IDENTITY AS ID
+		</selectKey>
+	</insert>
+	<insert id="Recipe.insert" parameterClass="org.itpower.pickscreens.core.model.Recipe">
+		INSERT INTO recipe(id, idScreen, number)
+		VALUES(NULL, #idScreen#, #number#)
+		<selectKey resultClass="int" keyProperty="id">
+			SELECT @@IDENTITY AS ID
+		</selectKey>
+	</insert>
+
+	<!-- ALL DELETE QUERIES -->
+	<delete id="Duplicate.delete">
+		DELETE FROM duplicate
+	</delete>
+	<delete id="Screen.delete">
+		DELETE FROM screen
+	</delete>
+	<delete id="Recipe.delete">
+		DELETE FROM recipe
+	</delete>
+	<delete id="Ingredient.delete">
+		DELETE FROM ingredient
+	</delete>
+
+	<!-- FREE WHERE QUERIES -->
+	<statement id="Screen.select.sqlwhere" parameterClass="java.lang.String"
+		resultClass="org.itpower.pickscreens.core.model.Screen">
+		SELECT *
+		FROM screen
+		WHERE $value$
+	</statement>
+
+	<statement id="Duplicate.select.sqlwhere" parameterClass="java.lang.String"
+		resultClass="org.itpower.pickscreens.core.model.Duplicate">
+		SELECT *
+		FROM duplicate
+		WHERE $value$
+	</statement>
+	
+	<statement id="Duplicate.countRecipesInScreens" parameterClass="org.itpower.pickscreens.core.model.Duplicate"
+		resultClass="java.lang.Integer">
+		SELECT count(*) 
+		FROM duplicate
+		WHERE (idScreen1 = #idScreen1# AND idScreen2 = #idScreen2#) 
+		OR (idScreen1 = #idScreen2# AND idScreen2 = #idScreen1#) 
+	</statement>
+
+	<statement id="Recipe.select.sqlwhere" parameterClass="java.lang.String"
+		resultClass="org.itpower.pickscreens.core.model.Recipe">
+		SELECT *
+		FROM recipe
+		WHERE $value$
+	</statement>
+
+	<statement id="Ingredient.select.sqlwhere" parameterClass="java.lang.String"
+		resultClass="org.itpower.pickscreens.core.model.Ingredient">
+		SELECT *
+		FROM ingredient
+		WHERE $value$
+	</statement>
+	
+	<statement id="Ingredient.select.groupBy" parameterClass="java.lang.String"
+		resultClass="org.itpower.pickscreens.core.model.Ingredient">
+		SELECT *
+		FROM ingredient
+		GROUP BY $value$
+	</statement>
+
+</sqlMap>

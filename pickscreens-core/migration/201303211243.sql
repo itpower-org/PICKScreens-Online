@@ -1,0 +1,1 @@
+ALTER TABLE screen ADD COLUMN freeForPublic TINYINT NOT NULL;

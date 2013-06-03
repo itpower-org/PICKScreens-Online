@@ -1,0 +1,235 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.itpower.picksreens.web</groupId>
+	<version>1.00-RC1</version>
+	<artifactId>pickscreens-web</artifactId>
+	<packaging>war</packaging>
+	<name>PICKScreens Web</name>
+	<description>Control for the main web application</description>
+	<url>http://www.it-power.org</url>
+	<licenses>
+		<license>
+			<name>Creative Commons License Attribution-NonCommercial-ShareAlike 3.0 Unported</name>
+			<url>http://creativecommons.org/licenses/by-nc-sa/3.0</url>
+			<distribution>3.0</distribution>
+			<comments>
+        Copyright 2013 by IT-Power GmbH (http://www.it-power.org)
+
+        Licensed under the Creative Commons License Attribution-NonCommercial-ShareAlike 3.0 Unported;
+        you may not use this file except in compliance with the License.
+        You may obtain a copy of the License at
+
+        http://creativecommons.org/licenses/by-nc-sa/3.0
+
+        Unless required by applicable law or agreed to in writing, software
+        distributed under the License is distributed on an "AS IS" BASIS,
+        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+        See the License for the specific language
+        governing permissions and
+        limitations under the License.
+      </comments>
+		</license>
+	</licenses>
+	<organization>
+		<name>it-power.org</name>
+		<url>http://www.it-power.org</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>danieloltmanns</id>
+			<name>Daniel Oltmanns</name>
+			<email>daniel.oltmanns@it-power.org</email>
+			<url>http://www.it-power.org</url>
+			<organization>IT-Power GmbH</organization>
+			<organizationUrl>http://www.it-power.org</organizationUrl>
+			<roles>
+				<role>project manager</role>
+				<role>coder</role>
+				<role>documentarist</role>
+				<role>tester</role>
+			</roles>
+			<timezone>1</timezone>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<organization>Max Planck Institute of Biophysics</organization>
+			<organizationUrl>http://www.biophys.mpg.de</organizationUrl>
+			<roles>
+				<role>constituent</role>
+			</roles>
+			<timezone>1</timezone>
+		</contributor>
+	</contributors>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${version.springframework}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>org.json</artifactId>
+			<version>chargebee-1.0</version>
+		</dependency>
+				<dependency>
+			<groupId>org.itpower.lib</groupId>
+			<artifactId>itp-lib</artifactId>
+			<version>1.00-SNAPSHOT</version>
+		</dependency>
+	
+		    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${version.springframework}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${version.springframework}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${version.springframework}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>6.0.35</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Java EE -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.5</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.22</version>
+		</dependency>
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.itpower.picksreens.core</groupId>
+			<artifactId>pickscreens-core</artifactId>
+			<version>1.00-SNAPSHOT</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<finalName>pickscreens</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<configuration>
+					<path>/pickscreens</path>
+				</configuration>
+				<version>1.1</version>
+			</plugin>
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/migration</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</testResource>
+		</testResources>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.springframework>3.2.2.RELEASE</version.springframework>
+		<db.username>root</db.username>
+		<db.password></db.password>
+		<db.url>jdbc:mysql://localhost:3306/pickscreens</db.url>
+		<db.driver>com.mysql.jdbc.Driver</db.driver>
+		<log4j.file>/tmp/log4j_pickscreens.log</log4j.file>
+	</properties>
+</project>
+
+
+
+
+
+
+
